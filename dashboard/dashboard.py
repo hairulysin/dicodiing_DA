@@ -38,7 +38,7 @@ def sidebar(df):
     max_date = df["dteday"].max()
 
     with st.sidebar:
-        st.image("https://github.com/hairulysin/dicoding_DA/blob/main/bikesharing.png")
+        st.image("https://raw.githubusercontent.com/anddfian/Dicoding-BADP/main/Submission/dashboard/Capital Bikeshare Logo.png")
         
 
         def on_change():
@@ -149,7 +149,7 @@ def weathersit(df):
 
 
 if __name__ == "__main__":
-    sns.set(style="dark")
+    sns.set(style="white")
 
     st.header("Bike Sharing Dashboard :bike:")
 
