@@ -1,25 +1,15 @@
 # Laporan Proyek Machine Learning - Hairul Yasin
 ## Domain Proyek
-Beberapa perusahaan aspal curah dihadapkan pada fluktuasi harga minyak yang rumit. Harga minyak yang naik turun langsung berimbas pada biaya produksi aspal, sehingga menentukan harga jual yang tepat menjadi tantangan besar. Saat ini, perusahaan mengandalkan data historis harga Argus (berlangganan) dan tren harga minyak untuk memprediksi harga aspal.  Sayangnya, data Argus hanya memberikan gambaran masa lalu, tanpa kemampuan memprediksi masa depan. Hal ini membuat perusahaan kesulitan dalam mengambil keputusan strategis yang tepat.
 
-**Terobosan Baru: Machine Learning (ML)!**
-
-Alasannya : ML mampu menganalisis data historis harga minyak dan aspal, serta faktor-faktor lain yang mempengaruhi harga, seperti kondisi ekonomi global dan permintaan pasar. Hasilnya, prediksi harga aspal yang lebih akurat dan terarah. Dengan hasil preediksi ini, diharapkan perusahaan dapat menetapkan harga jual yang kompetitif, mengelola stock dengan baik, dan meminimalisir resiko keuangan
+Beberapa perusahaan aspal curah menghadapi tantangan fluktuasi harga minyak yang kompleks. Fluktuasi ini langsung memengaruhi biaya produksi aspal, yang pada gilirannya menentukan harga jual yang optimal. Saat ini, perusahaan bergantung pada data historis harga Argus (melalui berlangganan) dan tren harga minyak untuk memprediksi harga aspal. Namun, keterbatasan data Argus hanya mencakup gambaran masa lalu tanpa kemampuan untuk memproyeksikan masa depan, menyulitkan perusahaan dalam pengambilan keputusan strategis yang tepat. Solusi inovatif datang dalam bentuk Machine Learning (ML). ML mampu menganalisis data historis harga minyak dan aspal, serta mempertimbangkan faktor-faktor lain seperti kondisi ekonomi global dan permintaan pasar. Hasilnya adalah prediksi harga aspal yang lebih akurat dan terarah. Diharapkan, dengan prediksi ini, perusahaan dapat menetapkan harga jual yang kompetitif, mengelola stok dengan lebih efisien, dan meminimalkan risiko keuangan.
 
 ## Business Understanding
 
 ### Problem Statements
-
-**Bagaimana model ML dapat membantu perusahaan aspal dalam memprediksi harga minyak?**
-
-Fluktuasi harga minyak dunia yang tak terduga menjadi momok bagi industri aspal. Hal ini menyebabkan perusahaan kesulitan dalam memprediksi biaya produksi dan penetapan harga yang tepat. Penelitian ini hadir untuk membawa solusi inovatif dengan model machine learning (ML) akan membantu perusahaan dalam:
-1. Meningkatkan Efisiensi dan Profitabilitas
-2. Meningkatkan daya saing
-3. Mendukung pengambilan keputusan
+Fluktuasi harga minyak dunia yang tak terduga menjadi momok bagi industri aspal. Hal ini menyebabkan perusahaan kesulitan dalam memprediksi biaya produksi dan penetapan harga yang tepat. Penelitian ini hadir untuk membawa solusi inovatif dengan model machine learning (ML) akan membantu perusahaan dalamm pengambilan keputusan
 
 **Goals** :
-- Mengembangkan model prediksi harga minyak dunia yang akurat dan mudah diakses.
-- Memberikan informasi prediksi harga minyak kepada perusahaan aspal untuk membantu mereka dalam pengambilan keputusan strategis.
+Penelitian ini bertujuan membantu industri aspal menghadapi masalah fluktuasi harga minyak dunia. Dengan membuat model prediksi menggunakan machine learning untuk membantu perusahaan memprediksi biaya produksi dan menetapkan harga dengan lebih tepat. Dengan prediksi yang lebih baik, diharapkan perusahaan dapat mengambil keputusan yang lebih baik pula.
 
 ## Data Understanding
 
@@ -44,16 +34,39 @@ Analisis mendalam menguak fluktuasi harga penutupan yang signifikan (kisaran 50.
 
 Langkah-langkah persiapan data yang dilakukan:
 
-1. Mengubah format kolom Date menjadi datetime
-2. Memilih kolom Close sebagai variabel target
-3. Menganalisis statistik deskriptif awal untuk memahami distribusi data
-4. Memvisualisasikan time series data harga close
-5. Melakukan differencing data untuk mencapai stasioneritas
-6. Membagi data training dan testing untuk melatih model
+1. Pengubahan dtype pada variabel
+   -  Pengubahan dtype pada variabel mengacu pada proses mengubah tipe data dari suatu variabel menjadi tipe data yang berbeda, agar datanya konsisten.
+   -  Kegunaannya adalah untuk mempermudah analisis data time series, dan memungkinkan model untuk memproses data secara akurat dalam konteks data
+   -  Teknik ini dilakukan pada kolom Date
+2. Memilih variabel target
+   - Menentukan kolom dalam dataset yang akan diprediksi oleh model (Variabel y)
+   - Kegunaanya ialah untuk mengarahkan model untuk fokus pada prediksi harga minyak, yang merupakan tujuan utama dari analisis
+   - Dilakukan pada kolom Close data, karena analisis ini untuk memprediksi harga penuutupan minyak.
+3. Menganalisis Statistik Deskriptif Awal
+   - Deskrispi Statistik ialah metode analisis data yang menggunakan konsep statistik untuk menjelaskan pola, tren, dan distribusi data tanpa analisis mendalam.
+   - Kegunaannya adalah untuk pemahaman awal tentang data sebelum analisis lebih lanjut, ini membantu dalam identifikasi pola atau anomali dalam data.
+   - Tahapan ini dilakukan pada seluruh dataset harga minyak.
+4. Visualiasi time series 
+   - Visualisasi time series ialah tahapan melihat tren dan pola harga selama periode waktu tertentu.
+   - Kegunaannya ialah untuk mengidentifikasi tren dan pola harga secara visual, kemudian untuk melihat potensi musiman dalam data harga aspal
+   - Dilakukan pada kolom Close dan kolom Date dalam dataset
+5. Melakukan differencing data
+   - Differencing ialah proses untuk mengurai nilai-nilai dalam data time series dengan nilai sebelumnya.
+   - Kegunaannya ialah untuk memenuhi asumsi stasioneritas dalam model ARIMA, sehingga model bekerja lebih baik. kemudian untuk menghilangkan trend dan pola musiman dalam data.
+   - Dilakukan pada kolom Close, target variabelnya.
+6. Membagi data training dan testing 
+   - Membagi dataset mebnjadi set training untuk melatih model, sedangkan set test digunakan untuk mengevaluasi performa model.
+   - Kegunaanya untuk mencegah model overfitting, dimana model terlalu terfokus pada set training dan tidak dapat menghasilkan prediksi yang akurat pada data baru.
+   - Dilakukan pada kolom Close dan Date.
 7. Menyiapkan data dalam format yang sesuai untuk model ARIMA dan LSTM
-
+   - Mengubah format data agar sesuai dengan kebutuhan model ARIMA dan LSTM. Model ARIMA membutuhkan data yang stasioner, sedangkan model LSTM membutuhkan data yang diubah menjadi time steps dan feature vectors. Time steps adalah representasi data time series dalam bentuk urutan data pada interval waktu tertentu. Feature vectors adalah representasi data dalam bentuk vektor yang berisi nilai numerik untuk setiap fitur atau variabel.
+   - Tahapan ini berguna untuk membantu model dalam memahami struktur dan karakteristik data
+   - Dilakukan pada:
+      a. ARIMA: Kolom Close dalam dataset harga aspal setelah differencing.
+      b. LSTM: Kolom Close dan kolom Date dalam dataset harga aspal, diubah menjadi time steps dan feature vectors.
+     
 ## Modeling
-Proyek ini bertujuan untuk membangun model prediksi harga minyak Brent Crude yang akurat dan menyediakan informasi prediksi harga minyak secara real-time. Permasalahan utama yang dihadapi adalah kompleksitas dan dinamika data harga minyak yang dipengaruhi oleh berbagai faktor ekonomi dan non-ekonomi. Dalam proyek ini, dua algoritma machine learning digunakan untuk memprediksi harga minyak, yaitu ARIMA dan LSTM.
+Proyek ini bertujuan untuk membangun model prediksi harga minyak Brent Crude yang akurat dan menyediakan informasi prediksi harga minyak secara real-time. Permasalahan utama yang dihadapi adalah kompleksitas dan dinamika data harga minyak yang dipengaruhi oleh berbagai faktor ekonomi dan non-ekonomi. Dalam proyek ini, dua algoritma machine learning digunakan untuk memprediksi harga minyak, yaitu ARIMA dan LSTM. 
 
 ### ARIMA
 Model ARIMA (Autoregressive Integrated Moving Average)  ARIMA merupakan model statistik yang umum digunakan untuk memprediksi data time series yang stabil dan menunjukkan tren yang jelas. Algoritma ini bekerja dengan mengidentifikasi pola ketergantungan antara nilai-nilai masa lalu dalam data. Model ARIMA yang digunakan dalam proyek ini adalah ARIMA(0, 1, 3).
