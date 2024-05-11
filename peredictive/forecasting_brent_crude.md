@@ -15,7 +15,9 @@ Penelitian ini bertujuan membantu industri aspal menghadapi masalah fluktuasi ha
 
 Data yang digunakan dalam proyek ini adalah data harga minyak Brent Crude harian dari tahun 2021 hingga 2024. Data tersebut diperoleh dari Google Finance.
 
-Data dapat diakses secara gratis melalui situs web Google Finance. Berikut adalah tautannya: _https://www.google.com/finance/quote/BZW00:NYMEX?hl=en_
+Jumlah data: Ada 759 entri dalam dataset yang digunakan.
+Kondisi data: Data tidak memiliki missing value, kolom Date menjadi variabel y.
+nformasi mengenai data yang digunakan: Data yang digunakan hanya terdiri dari kolom date dan harga penutupan (close).
 
 ### Dataset ini memiliki beberapa kolom, yaitu:
 1. Date: Tanggal pencatatan data.
@@ -24,6 +26,8 @@ Data dapat diakses secara gratis melalui situs web Google Finance. Berikut adala
 4. Low: Harga terendah dalam satu hari perdagangan.
 5. Close: Harga penutupan perdagangan.
 6. Volume: Volume perdagangan dalam barel.
+
+Data dapat diakses secara gratis melalui situs web Google Finance. Berikut adalah tautannya: _https://www.google.com/finance/quote/BZW00:NYMEX?hl=en_
 
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/85e9a047-af49-4961-94ca-4a6f0ad32acf)
 
@@ -97,38 +101,27 @@ Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasa
 
 1. Mean Absolute Error (MAE) mengukur rata-rata perbedaan absolut antara nilai aktual dan prediksi, menunjukkan rata-rata kesalahan prediksi.
    
-   **MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|**
-   
+   **MAE = (1/n) * Σ |Actual_i - Forecast_i|**
    di mana:
-      - n adalah jumlah data
-      - y_i adalah nilai aktual pada data ke-i
-      - \hat{y}_i adalah prediksi model pada data ke-i
 
 3. Mean Squared Error (MSE) mengukur rata-rata kuadrat perbedaan, memberikan bobot lebih besar pada kesalahan besar.
    
-   **MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2**
-   
-   di mana:
-      - n adalah jumlah data
-      - y_i adalah nilai aktual pada data ke-i
-      - \hat{y}_i adalah prediksi model pada data ke-i
+   **MSE = (1/n) * Σ (Actual_i - Forecast_i)^2**
   
 4. Root Mean Squared Error (RMSE) adalah akar kuadrat MSE, memberikan skala kesalahan dalam unit data asli.
    
-   **RMSE = \sqrt{MSE}**
+   **RMSE = sqrt((1/n) * Σ (Actual_i - Forecast_i)^2)**
    
-   di mana:
-      - MSE adalah Mean Squared Error
-
 5. R-squared (R²) menunjukkan seberapa baik model menjelaskan varians data, dengan nilai mendekati 1 menunjukkan penjelasan yang baik.
    
-   **R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}**
+   **R^2 = 1 - (Σ (Actual_i - Forecast_i)^2) / (Σ (Actual_i - Mean(Actual))^2)**
    
    di mana:
       - n adalah jumlah data
-      - y_i adalah nilai aktual pada data ke-i
-      - \hat{y}_i adalah prediksi model pada data ke-i
-      - \bar{y} adalah rata-rata nilai aktual
+      - Actual_i: nilai aktual pada data ke-i
+      - Forecast_i: prediksi model pada data ke-i
+      - Mean(Actual): rata-rata nilai aktual
+    
 
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/11a47918-1f82-4436-9fa8-c9ef780e3bae)
 
