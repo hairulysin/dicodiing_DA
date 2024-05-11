@@ -38,6 +38,7 @@ Data dapat diakses secara gratis melalui situs web Google Finance. Berikut adala
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/85e9a047-af49-4961-94ca-4a6f0ad32acf)
 
 Statistik deskriptif Awal:
+
                                 Date       Close  chg.close.         Low  \
 count                            759  759.000000  759.000000  759.000000   
 mean   2022-07-06 09:29:10.197628672   80.307971    0.099987   79.184269   
