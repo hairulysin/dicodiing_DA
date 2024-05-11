@@ -37,46 +37,55 @@ Data dapat diakses secara gratis melalui situs web Google Finance. Berikut adala
 
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/85e9a047-af49-4961-94ca-4a6f0ad32acf)
 
-Statistik deskriptif Awal:
-
-                                Date       Close  chg.close.         Low  \
-count                            759  759.000000  759.000000  759.000000   
-mean   2022-07-06 09:29:10.197628672   80.307971    0.099987   79.184269   
-min              2021-01-04 00:00:00   50.230000  -17.140000   49.970000   
-25%              2021-10-04 12:00:00   72.445000   -0.800000   71.480000   
-50%              2022-07-07 00:00:00   79.820000    0.210000   78.760000   
-75%              2023-04-08 00:00:00   88.200000    1.080000   87.230000   
-max              2024-01-10 00:00:00  114.190000   50.230000  113.390000   
-std                              NaN   12.323786    2.721369   12.051838   
-
-         chg.low.        High   chg.high.  
-count  759.000000  759.000000  759.000000  
-mean     0.099776   81.372266    0.102385  
-min    -13.990000   51.880000  -18.050000  
-25%     -0.680000   73.435000   -0.575000  
-50%      0.140000   80.750000    0.160000  
-75%      0.995000   90.335000    0.850000  
-max     49.970000  115.060000   51.880000  
-std      2.562347   12.661389    2.641597  
-
 **💡 Insight :**
 Analisis mendalam menguak fluktuasi harga penutupan yang signifikan (kisaran 50.23-114.19) dan perubahannya yang dinamis (rata-rata 0.1). Hal ini menunjukkan volatilitas pasar yang perlu diwaspadai. Harga terendah (kisaran 49.97-113.39) dan perubahannya (rata-rata 0.10) mencerminkan potensi risiko penurunan harga, sedangkan harga tertinggi (kisaran 51.88-115.06) dan perubahannya (rata-rata 0.10) membuka peluang keuntungan dari kenaikan harga. Volatilitas pasar minyak Brent Crude yang kompleks ini menjadi landasan bagi perusahaan untuk mengambil keputusan strategis yang tepat dan terukur. 
 
+## Data Preparation
+
+Langkah-langkah persiapan data yang dilakukan:
+
+1. Mengubah format kolom Date menjadi datetime
+2. Memilih kolom Close sebagai variabel target
+3. Menganalisis statistik deskriptif awal untuk memahami distribusi data
+4. Memvisualisasikan time series data harga close
+5. Melakukan differencing data untuk mencapai stasioneritas
+6. Membagi data training dan testing untuk melatih model
+7. Menyiapkan data dalam format yang sesuai untuk model ARIMA dan LSTM
+
 ## Modeling
-Dalam proyek ini, dua algoritma machine learning digunakan untuk memprediksi harga minyak dunia, yaitu ARIMA dan LSTM.
+Proyek ini bertujuan untuk membangun model prediksi harga minyak Brent Crude yang akurat dan menyediakan informasi prediksi harga minyak secara real-time. Permasalahan utama yang dihadapi adalah kompleksitas dan dinamika data harga minyak yang dipengaruhi oleh berbagai faktor ekonomi dan non-ekonomi. Dalam proyek ini, dua algoritma machine learning digunakan untuk memprediksi harga minyak, yaitu ARIMA dan LSTM.
 
 ### ARIMA
-Model ARIMA (Autoregressive Integrated Moving Average) adalah model statistik yang umum digunakan untuk memprediksi data time series. Model ARIMA dipilih karena cocok untuk data time series yang stabil dan memiliki tren. Model ARIMA yang digunakan dalam proyek ini adalah ARIMA(0, 1, 3).
+Model ARIMA (Autoregressive Integrated Moving Average)  ARIMA merupakan model statistik yang umum digunakan untuk memprediksi data time series yang stabil dan menunjukkan tren yang jelas. Algoritma ini bekerja dengan mengidentifikasi pola ketergantungan antara nilai-nilai masa lalu dalam data. Model ARIMA yang digunakan dalam proyek ini adalah ARIMA(0, 1, 3).
 
 ### LSTM
-Model LSTM (Long Short-Term Memory) adalah model neural network yang efektif dalam menangani data time series dengan pola yang kompleks dan non-linear. Model LSTM dipilih karena kemampuannya dalam menangkap pola non-linear dan kompleks dalam data harga minyak.
+Model LSTM (Long Short-Term Memory) merupakan model deep learning yang mampu menangkap pola dan hubungan kompleks dalam data time series, termasuk pola non-linear dan jangka panjang. Algoritma ini menggunakan jaringan saraf tiruan untuk mempelajari hubungan temporal dan spasial dalam data.
+
+### Tahapan Pemodelan
+
+a. Pra-pemrosesan Data:
+Data dibersihkan dan diubah formatnya menjadi sesuai dengan kebutuhan model.
+Data dibagi menjadi set pelatihan dan pengujian.
+
+b. Pelatihan Model:
+ARIMA: Model ARIMA dilatih dengan menggunakan paket pmdarima di Python.
+LSTM: Model LSTM dilatih dengan menggunakan framework TensorFlow di Python.
+
+c. Evaluasi Model:
+Metrik evaluasi seperti Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), dan R-squared digunakan untuk menilai kinerja model.
+Prediksi model dibandingkan dengan data aktual untuk memverifikasi keakuratan model.
+
+d. Visualisasi Hasil:
+Grafik time series digunakan untuk memvisualisasikan prediksi model dan membandingkannya dengan data aktual.
 
 ## Evaluation
 
 Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasan tentang keakuratan prediksi model. Mean Absolute Error (MAE) mengukur rata-rata perbedaan absolut antara nilai aktual dan prediksi, menunjukkan rata-rata kesalahan prediksi. Mean Squared Error (MSE) mengukur rata-rata kuadrat perbedaan, memberikan bobot lebih besar pada kesalahan besar. Root Mean Squared Error (RMSE) adalah akar kuadrat MSE, memberikan skala kesalahan dalam unit data asli. R-squared (R²) menunjukkan seberapa baik model menjelaskan varians data, dengan nilai mendekati 1 menunjukkan penjelasan yang baik.
 
+![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/11a47918-1f82-4436-9fa8-c9ef780e3bae)
+
 Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasan tentang keakuratan prediksi model. Mean Absolute Error (MAE) mengukur rata-rata perbedaan absolut antara nilai aktual dan prediksi, menunjukkan rata-rata kesalahan prediksi. Mean Squared Error (MSE) mengukur rata-rata kuadrat perbedaan, memberikan bobot lebih besar pada kesalahan besar. Root Mean Squared Error (RMSE) adalah akar kuadrat MSE, memberikan skala kesalahan dalam unit data asli. R-squared (R²) menunjukkan seberapa baik model menjelaskan varians data, dengan nilai mendekati 1 menunjukkan penjelasan yang baik.
 
 Kesimpulan:
 
-Model LSTM direkomendasikan untuk memprediksi harga minyak dunia karena akurasinya yang lebih tinggi dan kemampuannya untuk menjelaskan varians data dengan lebih baik. Namun, penting untuk dicatat bahwa performa model dapat bervariasi tergantung pada karakteristik data dan pilihan hyperparameter
+Pengembangan model LSTM untuk prediksi harga minyak Brent Crude memberikan solusi yang efektif untuk menjawab kompleksitas dan dinamika data harga minyak. Model ini terbukti mampu menghasilkan prediksi yang akurat dan dapat diandalkan, sehingga dapat digunakan untuk mendukung berbagai kepentingan yang terkait dengan harga minyak.
