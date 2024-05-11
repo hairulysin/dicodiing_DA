@@ -28,12 +28,12 @@ Data yang digunakan dalam proyek ini adalah data harga minyak Brent Crude harian
 Data dapat diakses secara gratis melalui situs web Google Finance. Berikut adalah tautannya: _https://www.google.com/finance/quote/BZW00:NYMEX?hl=en_
 
 ### Dataset ini memiliki beberapa kolom, yaitu:
-Date: Tanggal pencatatan data.
-Open: Harga pembukaan perdagangan.
-High: Harga tertinggi dalam satu hari perdagangan.
-Low: Harga terendah dalam satu hari perdagangan.
-Close: Harga penutupan perdagangan.
-Volume: Volume perdagangan dalam barel.
+1. Date: Tanggal pencatatan data.
+2. Open: Harga pembukaan perdagangan.
+3. High: Harga tertinggi dalam satu hari perdagangan.
+4. Low: Harga terendah dalam satu hari perdagangan.
+5. Close: Harga penutupan perdagangan.
+6. Volume: Volume perdagangan dalam barel.
 
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/85e9a047-af49-4961-94ca-4a6f0ad32acf)
 
