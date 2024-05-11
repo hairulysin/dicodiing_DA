@@ -100,23 +100,23 @@ Metrik evaluasi memberikan wawasan yang penting tentang seberapa baik model time
 
 1. Mean Absolute Error (MAE):
 
-   - Formula: MAE = **(1/n) * Σ |Actual_i - Forecast_i|**
-   - Intuisi: MAE mengukur rata-rata kesalahan prediksi dalam satuan yang sama dengan variabel target. Semakin rendah nilai MAE, semakin baik model dalam memprediksi data.
+   - **MAE = (1/n) * Σ |Actual_i - Forecast_i|**
+   - MAE mengukur rata-rata kesalahan prediksi dalam satuan yang sama dengan variabel target. Semakin rendah nilai MAE, semakin baik model dalam memprediksi data.
   
 2. Mean Squared Error (MSE):
 
-   - Formula: MSE = **(1/n) * Σ (Actual_i - Forecast_i)^2**
-   - Intuisi: MSE mengukur rata-rata dari kuadrat kesalahan prediksi. Bobot lebih besar diberikan pada kesalahan yang lebih besar, sehingga outlier memiliki dampak yang lebih signifikan.
+   - **MSE = (1/n) * Σ (Actual_i - Forecast_i)^2**
+   - MSE mengukur rata-rata dari kuadrat kesalahan prediksi. Bobot lebih besar diberikan pada kesalahan yang lebih besar, sehingga outlier memiliki dampak yang lebih signifikan.
 
 3. Root Mean Squared Error (RMSE):
 
-   - Formula: RMSE = **sqrt((1/n) * Σ (Actual_i - Forecast_i)^2)**
-   - Intuisi: RMSE memberikan skala kesalahan dalam unit data asli, sehingga lebih mudah diinterpretasikan. Nilai RMSE yang lebih rendah menunjukkan prediksi yang lebih baik.
+   - **RMSE = sqrt((1/n) * Σ (Actual_i - Forecast_i)^2)**
+   - RMSE memberikan skala kesalahan dalam unit data asli, sehingga lebih mudah diinterpretasikan. Nilai RMSE yang lebih rendah menunjukkan prediksi yang lebih baik.
      
 4. R-squared (R²):
 
-   - Formula: R^2 = 1 - (Σ (Actual_i - Forecast_i)^2) / (Σ (Actual_i - Mean(Actual))^2)
-   - Intuisi: R-squared mengukur seberapa baik model cocok dengan data aktual. Nilai mendekati 1 menunjukkan penjelasan yang baik tentang varians data oleh model.
+   - **R^2 = 1 - (Σ (Actual_i - Forecast_i)^2) / (Σ (Actual_i - Mean(Actual))^2)**
+   - R-squared mengukur seberapa baik model cocok dengan data aktual. Nilai mendekati 1 menunjukkan penjelasan yang baik tentang varians data oleh model.
 
 di mana:
    - n adalah jumlah data
