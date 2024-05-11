@@ -96,23 +96,29 @@ Grafik time series digunakan untuk memvisualisasikan prediksi model dan membandi
 
 ## Evaluation
 
-Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasan tentang keakuratan prediksi model. 
+Metrik evaluasi memberikan wawasan yang penting tentang seberapa baik model time series, seperti ARIMA dan LSTM, dalam memprediksi data. Menggunakan metrik ini, kita dapat mengukur seberapa akurat prediksi model tersebut.
 
-1. Mean Absolute Error (MAE) mengukur rata-rata perbedaan absolut antara nilai aktual dan prediksi, menunjukkan rata-rata kesalahan prediksi.
-   
-   **MAE = (1/n) * Σ |Actual_i - Forecast_i|**
+Untuk model ARIMA, hasil evaluasi menunjukkan bahwa:
 
-3. Mean Squared Error (MSE) mengukur rata-rata kuadrat perbedaan, memberikan bobot lebih besar pada kesalahan besar.
-   
-   **MSE = (1/n) * Σ (Actual_i - Forecast_i)^2**
+- Mean Absolute Error (MAE) adalah sekitar 2.09, yang menunjukkan rata-rata kesalahan prediksi sekitar 2.09 satuan.
   
-4. Root Mean Squared Error (RMSE) adalah akar kuadrat MSE, memberikan skala kesalahan dalam unit data asli.
-   
+  **MAE = (1/n) * Σ |Actual_i - Forecast_i|**
+   MAE mengukur rata-rata kesalahan prediksi dalam satuan yang sama dengan variabel target. Semakin rendah nilai MAE, semakin baik model dalam memprediksi data.
+
+- Mean Squared Error (MSE) adalah sekitar 7.04, memberikan bobot lebih besar pada kesalahan yang lebih besar.
+  
+  **MSE = (1/n) * Σ (Actual_i - Forecast_i)^2**
+      MSE mengukur rata-rata dari kuadrat kesalahan prediksi. Bobot lebih besar diberikan pada kesalahan yang lebih besar, sehingga outlier memiliki dampak yang lebih signifikan.
+
+- Root Mean Squared Error (RMSE) sekitar 2.65, memberikan skala kesalahan dalam unit data asli.
+
    **RMSE = sqrt((1/n) * Σ (Actual_i - Forecast_i)^2)**
-   
-5. R-squared (R²) menunjukkan seberapa baik model menjelaskan varians data, dengan nilai mendekati 1 menunjukkan penjelasan yang baik.
-   
-   **R^2 = 1 - (Σ (Actual_i - Forecast_i)^2) / (Σ (Actual_i - Mean(Actual))^2)**
+   RMSE memberikan skala kesalahan dalam unit data asli, sehingga lebih mudah diinterpretasikan. Nilai RMSE yang lebih rendah menunjukkan prediksi yang lebih baik.
+
+- R-squared (R²) memiliki nilai sekitar -0.41, yang menunjukkan bahwa model tidak sesuai dengan data dengan baik.
+  
+  **R^2 = 1 - (Σ (Actual_i - Forecast_i)^2) / (Σ (Actual_i - Mean(Actual))^2)**
+  R-squared mengukur seberapa baik model cocok dengan data aktual. Nilai mendekati 1 menunjukkan penjelasan yang baik tentang varians data oleh model.
    
    di mana:
       - n adalah jumlah data
@@ -120,10 +126,16 @@ Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasa
       - Forecast_i: prediksi model pada data ke-i
       - Mean(Actual): rata-rata nilai aktual
     
+Sementara itu, untuk model LSTM, hasil evaluasi menunjukkan kinerja yang lebih baik:
 
+- Mean Absolute Error (MAE) sekitar 1.26, menunjukkan rata-rata kesalahan prediksi sekitar 1.26 satuan.
+- Mean Squared Error (MSE) sekitar 2.61, memberikan bobot lebih besar pada kesalahan yang lebih besar.
+- Root Mean Squared Error (RMSE) sekitar 1.62, memberikan skala kesalahan dalam unit data asli.
+- R-squared (R²) memiliki nilai sekitar 0.93, yang menunjukkan bahwa model cukup baik dalam menjelaskan varians data.
+  
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/11a47918-1f82-4436-9fa8-c9ef780e3bae)
 
-Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasan tentang keakuratan prediksi model. Mean Absolute Error (MAE) mengukur rata-rata perbedaan absolut antara nilai aktual dan prediksi, menunjukkan rata-rata kesalahan prediksi. Mean Squared Error (MSE) mengukur rata-rata kuadrat perbedaan, memberikan bobot lebih besar pada kesalahan besar. Root Mean Squared Error (RMSE) adalah akar kuadrat MSE, memberikan skala kesalahan dalam unit data asli. R-squared (R²) menunjukkan seberapa baik model menjelaskan varians data, dengan nilai mendekati 1 menunjukkan penjelasan yang baik.
+Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasan tentang keakuratan Berdasarkan hasil evaluasi ini, model LSTM menunjukkan kinerja yang lebih baik dibandingkan dengan model ARIMA. Ini menunjukkan bahwa penggunaan model LSTM dapat menghasilkan prediksi yang lebih akurat untuk data time series yang digunakan.
 
 **Kesimpulan:**
 
