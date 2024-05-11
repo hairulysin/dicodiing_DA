@@ -97,38 +97,38 @@ Metrik evaluasi untuk model time series seperti ARIMA dan LSTM memberikan wawasa
 
 1. Mean Absolute Error (MAE) mengukur rata-rata perbedaan absolut antara nilai aktual dan prediksi, menunjukkan rata-rata kesalahan prediksi.
    
-**MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|**
-
-di mana:
-   n adalah jumlah data
-   y_i adalah nilai aktual pada data ke-i
-   \hat{y}_i adalah prediksi model pada data ke-i
+   **MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|**
+   
+   di mana:
+      n adalah jumlah data
+      y_i adalah nilai aktual pada data ke-i
+      \hat{y}_i adalah prediksi model pada data ke-i
 
 3. Mean Squared Error (MSE) mengukur rata-rata kuadrat perbedaan, memberikan bobot lebih besar pada kesalahan besar.
    
-**MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2**
-
-di mana:
-   n adalah jumlah data
-   y_i adalah nilai aktual pada data ke-i
-   \hat{y}_i adalah prediksi model pada data ke-i
+   **MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2**
+   
+   di mana:
+      n adalah jumlah data
+      y_i adalah nilai aktual pada data ke-i
+      \hat{y}_i adalah prediksi model pada data ke-i
   
 4. Root Mean Squared Error (RMSE) adalah akar kuadrat MSE, memberikan skala kesalahan dalam unit data asli.
    
-**RMSE = \sqrt{MSE}**
-
-di mana:
-   MSE adalah Mean Squared Error
+   **RMSE = \sqrt{MSE}**
+   
+   di mana:
+      MSE adalah Mean Squared Error
 
 5. R-squared (R²) menunjukkan seberapa baik model menjelaskan varians data, dengan nilai mendekati 1 menunjukkan penjelasan yang baik.
    
-**R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}**
-
-di mana:
-   n adalah jumlah data
-   y_i adalah nilai aktual pada data ke-i
-   \hat{y}_i adalah prediksi model pada data ke-i
-   \bar{y} adalah rata-rata nilai aktual
+   **R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}**
+   
+   di mana:
+      n adalah jumlah data
+      y_i adalah nilai aktual pada data ke-i
+      \hat{y}_i adalah prediksi model pada data ke-i
+      \bar{y} adalah rata-rata nilai aktual
 
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/11a47918-1f82-4436-9fa8-c9ef780e3bae)
 
