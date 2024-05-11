@@ -15,9 +15,7 @@ Penelitian ini bertujuan membantu industri aspal menghadapi masalah fluktuasi ha
 
 Data yang digunakan dalam proyek ini adalah data harga minyak Brent Crude harian dari tahun 2021 hingga 2024. Data tersebut diperoleh dari Google Finance.
 
-Jumlah data: Ada 759 entri dalam dataset yang digunakan.
-Kondisi data: Data tidak memiliki missing value, kolom Date menjadi variabel y.
-nformasi mengenai data yang digunakan: Data yang digunakan hanya terdiri dari kolom date dan harga penutupan (close).
+Data yang digunakan dalam analisis ini terdiri dari 759 entri, dan setiap entri telah diperiksa untuk memastikan tidak ada nilai yang hilang. Variabel yang digunakan dalam analisis adalah tanggal (date), yang dijadikan variabel independen, serta harga penutupan (close), yang menjadi variabel dependen. Dengan fokus pada kolom tanggal dan harga penutupan, analisis ini bertujuan untuk melakukan prediksi terhadap harga penutupan berdasarkan data historis.
 
 ### Dataset ini memiliki beberapa kolom, yaitu:
 1. Date: Tanggal pencatatan data.
