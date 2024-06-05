@@ -16,3 +16,58 @@ Tujuan utama dari penelitian ini adalah membangun sistem rekomendasi buku yang s
 ### Goals
 1. Menyediakan rekomendasi buku yang sesuai dengan kriteria pembaca atau buku serupa menggunakan content-based filtering.
 2. Menyediakan rekomendasi buku yang belum dibaca atau mungkin disukai pembaca menggunakan collaborative filtering.
+
+#### Solution Statements
+1. Menerapkan content-based filtering dengan menggunakan TF-IDF dan cosine similarity untuk menemukan top 5 buku serupa berdasarkan judul dan penulis.
+2. Menerapkan collaborative filtering menggunakan class RecommenderNet untuk mendapatkan rekomendasi top 10 buku dengan rating tinggi.
+
+### Data Understanding
+
+Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-10k"_](https://www.kaggle.com/datasets/zygmunt/goodbooks-10k?select=books.csv). Dataset ini berisi 5 file dengan ekstensi csv, yaitu:
+1. **'book_tags.csv'**, file ini berisi data tag buku (label), diurutkan berdasarkan ascending goodreadsbookid dan count descending.
+   - goodreads_id : ID dari goodreads
+   - tag_id : ID tag (genre)
+   - count : Jumlah goodreads
+
+  Untuk mengetahui jumlah genre digunakan fungsi `len()` dengan menambah fungsi `unique`. Sehingga outputnya: 
+  ```sh
+    Jumlah genre buku:  34252
+  ```
+2. **'books.csv'**, berisi informasi mengenai buku.
+   - id : ID dari file books
+   - book_id : ID buku
+   - best_book_id : ID dari buku populer
+   - work_id : ID karya
+   - books_count : jumlah edisi buku tertentu
+   - isbn : nomor isbn
+   - authors : nama penulis
+   - original_publication_year : tahun terbit buku
+   - original_title : judul asli buku
+   
+   Untuk melihat jumlah buku dan jumlah nama penulis menggunakan fungsi `len()` dan`unique()`. Sehingga outputnya:
+   ```sh
+     Jumlah buku:  10000
+     Jumlah author:  4664
+   ```
+4. **'ratings.csv'**, berisi rating buku sesuai id pengguna.
+   - book_id : ID buku
+   - user_id : ID Pengguna
+   - rating : rating buku
+   
+    ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/110e667b-14c4-45bc-8590-e6568bfdcfde)
+   > Gambar 1. Visualisasi Jumlah Rating Buku dari Pengguna
+5. **'tag.csv'**, berisi tentang pemetaan id-nama tag.
+   - tag_id : ID tag (genre)
+   - tag_name : Nama tag (genre)
+
+   Untuk mengetahui jumlah genre menggunakan fungsi `len()` dan `unique()`. Outputnya:
+    ```sh
+      Jumlah jenis genre buku:  34252
+    ```
+6. **'to_read.csv'**, daftar buku yang ditandai oleh pengguna "untuk dibaca". Diurutkan berdasarkan user_id dan book_id.
+   - user_id : ID pengguna/pembaca
+   - book_id : ID buku
+   
+    Dari data didapatkan Jumlah User = 48871.
+
+
