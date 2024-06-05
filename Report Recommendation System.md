@@ -3,7 +3,7 @@
 ## *Sistem Rekomendasi Buku*
 
 ## Project Overview
-Membaca buku adalah salah satu cara utama untuk memperoleh pengetahuan dan wawasan baru. Buku merupakan sumber informasi yang kaya dan membantu memperluas cakrawala kita. Pepatah "Buku adalah jendela dunia" menekankan pentingnya membaca. Meskipun informasi tentang berbagai buku mudah diakses di internet, minat baca di Indonesia masih rendah . Salah satu alasan utamanya adalah kesulitan menemukan buku yang sesuai dengan preferensi pembaca karena banyaknya pilihan yang tersedia.
+Membaca buku adalah salah satu cara utama untuk memperoleh pengetahuan dan wawasan baru. Buku merupakan sumber informasi yang kaya dan membantu memperluas cakrawala kita. Seperti kata pepatah "Buku adalah jendela dunia" menekankan pentingnya membaca. Meskipun informasi tentang berbagai buku mudah diakses di internet, minat baca di Indonesia masih rendah . Salah satu alasan utamanya adalah kesulitan menemukan buku yang sesuai dengan preferensi pembaca karena banyaknya pilihan yang tersedia.
 Untuk meningkatkan minat baca, kita dapat membangun sistem rekomendasi buku yang memudahkan pembaca menemukan buku yang sesuai dengan preferensi mereka. Sistem ini akan menggunakan metode Content-Based Filtering dan Collaborative Filtering. Diharapkan dengan mendapatkan rekomendasi yang tepat, pembaca akan lebih tertarik untuk membaca lebih banyak buku.
 
 ## Business Understanding
@@ -85,16 +85,17 @@ Content-Based Filtering: Menggunakan TF-IDF untuk mengubah fitur teks menjadi nu
 Collaborative Filtering: Menggunakan embedding untuk menghitung skor kecocokan antara pengguna dan buku. Model ini menerapkan class RecommenderNet dari Keras dan menghasilkan rekomendasi top 10 buku berdasarkan rating tinggi.
 
 ### Evaluasi
-Metrik evaluasi yang digunakan adalah Precision dan Root Mean Squared Error (RMSE).
+Metrik evaluasi yang digunakan adalah Root Mean Squared Error (RMSE).
+![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/20f50a42-6fac-4cab-8a85-f6aa7a2f75e1)
 
--  Precision: Mengukur jumlah prediksi positif yang benar dibagi dengan jumlah item yang direkomendasikan. Dalam contoh ini, precision untuk model content-based filtering adalah 60%.
-- RMSE: Mengukur tingkat akurasi prediksi model dengan rumus berikut:
-  Nilai RMSE rendah menunjukkan prediksi yang mendekati nilai observasi. Visualisasi RMSE selama pelatihan model collaborative filtering menunjukkan nilai error yang menurun hingga 0.2138, yang menunjukkan performa model yang baik.
+RMSE: Mengukur tingkat akurasi prediksi model dengan rumus berikut:
+  Nilai RMSE rendah menunjukkan prediksi yang mendekati nilai observasi. Visualisasi RMSE selama pelatihan model collaborative filtering menunjukkan nilai error yang menurun hingga 0.2136, yang menunjukkan performa model yang baik.
 
 ### Kesimpulan
 1. Sistem rekomendasi buku menggunakan content-based filtering berhasil memberikan rekomendasi buku berdasarkan penulis.
 2. Sistem rekomendasi buku menggunakan collaborative filtering berhasil memberikan rekomendasi buku berdasarkan rating tertinggi.
-3. Evaluasi model content-based filtering dengan precision mencapai 60%.
-4. Evaluasi model collaborative filtering dengan RMSE mencapai 0.2161.
+4. Evaluasi model collaborative filtering dengan RMSE mencapai 0.2136.
+   ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/b256fc2d-b53e-42f0-823d-e3f373c26862)
+
 
 
