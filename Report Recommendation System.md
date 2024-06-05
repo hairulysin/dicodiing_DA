@@ -70,4 +70,31 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
    
     Dari data didapatkan Jumlah User = 48871.
 
+### Data Preparation
+
+Langkah-langkah persiapan data meliputi:
+
+1. Mengatasi Missing Value: Pengecekan dan penghapusan data kosong menggunakan isnull().sum() dan dropna().
+   ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/9c181be2-b78e-42a3-b505-b6781c658a5d)
+3. Encoding Data: Melakukan encoding fitur 'user_id' dan book_id ke dalam indeks integer.
+4. Membagi Dataset: Membagi dataset menjadi data train dan test dengan rasio 80:20 setelah melakukan pengacakan dataset.
+
+### Pemodelan
+Content-Based Filtering: Menggunakan TF-IDF untuk mengubah fitur teks menjadi numerik dan menghitung kemiripan menggunakan cosine similarity. Model ini menghasilkan rekomendasi top 5 buku serupa berdasarkan judul yang dimasukkan.
+
+Collaborative Filtering: Menggunakan embedding untuk menghitung skor kecocokan antara pengguna dan buku. Model ini menerapkan class RecommenderNet dari Keras dan menghasilkan rekomendasi top 10 buku berdasarkan rating tinggi.
+
+### Evaluasi
+Metrik evaluasi yang digunakan adalah Precision dan Root Mean Squared Error (RMSE).
+
+-  Precision: Mengukur jumlah prediksi positif yang benar dibagi dengan jumlah item yang direkomendasikan. Dalam contoh ini, precision untuk model content-based filtering adalah 60%.
+- RMSE: Mengukur tingkat akurasi prediksi model dengan rumus berikut:
+  Nilai RMSE rendah menunjukkan prediksi yang mendekati nilai observasi. Visualisasi RMSE selama pelatihan model collaborative filtering menunjukkan nilai error yang menurun hingga 0.2138, yang menunjukkan performa model yang baik.
+
+### Kesimpulan
+1. Sistem rekomendasi buku menggunakan content-based filtering berhasil memberikan rekomendasi buku berdasarkan penulis.
+2. Sistem rekomendasi buku menggunakan collaborative filtering berhasil memberikan rekomendasi buku berdasarkan rating tertinggi.
+3. Evaluasi model content-based filtering dengan precision mencapai 60%.
+4. Evaluasi model collaborative filtering dengan RMSE mencapai 0.2161.
+
 
