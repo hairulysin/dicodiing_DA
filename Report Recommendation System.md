@@ -189,7 +189,7 @@ Dalam konteks proyek ini, nilai RMSE sebesar 0.2136 menunjukkan performa yang ba
 1. Sistem rekomendasi buku menggunakan content-based filtering berhasil memberikan rekomendasi buku berdasarkan penulis.
 2. Sistem rekomendasi buku menggunakan collaborative filtering berhasil memberikan rekomendasi buku berdasarkan rating tertinggi.
 4. Evaluasi model collaborative filtering dengan RMSE mencapai 0.2136.
-   ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/b256fc2d-b53e-42f0-823d-e3f373c26862)
+
 
 
 
