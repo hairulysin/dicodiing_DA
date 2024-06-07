@@ -9,7 +9,7 @@ Membaca buku adalah kunci penting untuk meningkatkan literasi dan pengetahuan, n
 Proyek ini bertujuan untuk membangun sistem rekomendasi buku yang dapat meningkatkan minat baca dengan menyediakan rekomendasi buku yang sesuai dengan preferensi dan kebutuhan pembaca.
 
 ### Problem Statements
-1. Bagaimana cara membangun sistem rekomendasi buku berdasarkan kriteria pembaca menggunakan content-based filtering?
+1. Bagaimana cara membangun sistem rekomendasi buku berdasarkan kriteria pembaca menggunakan _content-based filtering_?
 2. Bagaimana cara membangun sistem rekomendasi buku yang disukai berdasarkan rating menggunakan collaborative filtering?
 
 ### Goals
