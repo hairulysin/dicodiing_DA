@@ -205,20 +205,20 @@ Menggunakan algoritma embedding yang diterapkan dalam class _RecommenderNet_ dar
 - **Menangani Skala Besar**: Pendekatan ini mampu menangani data dalam skala besar dan memberikan rekomendasi yang relevan dengan memanfaatkan kesamaan pola preferensi.
 - **Cocok untuk Rating:** Algoritma ini dirancang khusus untuk prediksi rating, sehingga cocok untuk memberikan rekomendasi buku dengan rating tinggi.
 
-## Top 10 Rekomendasi Buku untuk User ID: 11468
+## Top 10 Rekomendasi Buku untuk User ID: 29781
 
-| **Judul Buku**                                         | **Penulis**                                                    |
-|--------------------------------------------------------|----------------------------------------------------------------|
-| Beloved                                                | Toni Morrison                                                  |
-| The Curious Incident of the Dog in the Night-Time      | Mark Haddon                                                    |
-| A People's History of the United States                | Howard Zinn                                                    |
-| The Taste of Home Cookbook                             | Janet Briggs, Beth Wittlinger                                  |
-| The Beautiful and Damned                               | F. Scott Fitzgerald                                            |
-| Hard Times                                             | Charles Dickens                                                |
-| Amsterdam                                              | Ian McEwan                                                     |
-| Superman: Birthright                                   | Mark Waid, Alfred Gough, Miles Millar, Dave McCaig, Gerry Alanguilan, Leinil Francis Yu |
-| Still Life with Woodpecker                             | Tom Robbins                                                    |
-| Love in the Time of Cholera                            | Gabriel García Márquez, Edith Grossman                         |
+| Judul Buku                                             | Penulis                                                          |
+|--------------------------------------------------------|------------------------------------------------------------------|
+| The Curious Incident of the Dog in the Night-Time      | Mark Haddon                                                      |
+| A People's History of the United States                | Howard Zinn                                                      |
+| The Adventures of Huckleberry Finn                     | Mark Twain, John Seelye, Guy Cardwell                           |
+| The Taste of Home Cookbook                             | Janet Briggs, Beth Wittlinger                                    |
+| The Beautiful and Damned                               | F. Scott Fitzgerald                                              |
+| Hard Times                                             | Charles Dickens                                                  |
+| The Last Juror                                         | John Grisham                                                     |
+| Still Life with Woodpecker                             | Tom Robbins                                                      |
+| Villa Incognito                                        | Tom Robbins                                                      |
+| Love in the Time of Cholera                            | Gabriel García Márquez, Edith Grossman                           |
 
 
 ### Evaluasi
