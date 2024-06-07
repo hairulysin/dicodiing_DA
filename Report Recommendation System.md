@@ -3,26 +3,26 @@
 ## *Sistem Rekomendasi Buku*
 
 ## Project Overview
-Membaca buku adalah kunci penting untuk meningkatkan literasi dan pengetahuan, namun di Indonesia, minat baca masih sangat rendah, dengan indeks hanya sekitar 0,001 menurut UNESCO. Salah satu tantangan utamanya adalah kesulitan menemukan buku yang sesuai dengan preferensi individu karena banyaknya pilihan yang tersedia. Dataset goodbooks-10k dari Kaggle, yang mencakup 10.000 buku beserta rating dan ulasan pengguna, digunakan untuk membangun sistem rekomendasi berbasis machine learning. Sistem ini menggunakan metode Content-Based dan Collaborative Filtering untuk membantu pembaca menemukan buku yang relevan dan menarik, sehingga diharapkan dapat mendorong peningkatan minat baca dan literasi. Dengan menggunakan model rekomendasi yang tepat, diharapkan dapat mempermudah pembaca dalam menemukan buku yang sesuai dengan minat mereka, menjadikan proses pencarian lebih cepat dan efisien, serta memberikan kontribusi positif terhadap budaya membaca di masyarakat.
+Membaca buku adalah kunci penting untuk meningkatkan literasi dan pengetahuan, namun di Indonesia, minat baca masih sangat rendah, dengan indeks hanya sekitar 0,001 menurut UNESCO. Salah satu tantangan utamanya adalah kesulitan menemukan buku yang sesuai dengan preferensi individu karena banyaknya pilihan yang tersedia. Dataset goodbooks-10k dari Kaggle, yang mencakup 10.000 buku beserta rating dan ulasan pengguna, digunakan untuk membangun sistem rekomendasi berbasis machine learning. Sistem ini menggunakan metode _Content-Based_ dan __Collaborative Filtering__ untuk membantu pembaca menemukan buku yang relevan dan menarik, sehingga diharapkan dapat mendorong peningkatan minat baca dan literasi. Dengan menggunakan model rekomendasi yang tepat, diharapkan dapat mempermudah pembaca dalam menemukan buku yang sesuai dengan minat mereka, menjadikan proses pencarian lebih cepat dan efisien, serta memberikan kontribusi positif terhadap budaya membaca di masyarakat.
 
 ## Business Understanding
 Proyek ini bertujuan untuk membangun sistem rekomendasi buku yang dapat meningkatkan minat baca dengan menyediakan rekomendasi buku yang sesuai dengan preferensi dan kebutuhan pembaca.
 
 ### Problem Statements
-1. Bagaimana cara membangun sistem rekomendasi buku berdasarkan kriteria pembaca menggunakan _content-based filtering_?
-2. Bagaimana cara membangun sistem rekomendasi buku yang disukai berdasarkan rating menggunakan collaborative filtering?
+1. Bagaimana cara membangun sistem rekomendasi buku berdasarkan kriteria pembaca menggunakan _Content-Based Filtering_?
+2. Bagaimana cara membangun sistem rekomendasi buku yang disukai berdasarkan rating menggunakan _Collaborative Filtering_?
 
 ### Goals
-1. Menyediakan rekomendasi buku yang sesuai dengan kriteria pembaca atau buku serupa menggunakan content-based filtering.
-2. Menyediakan rekomendasi buku yang belum dibaca atau mungkin disukai pembaca menggunakan collaborative filtering.
+1. Menyediakan rekomendasi buku yang sesuai dengan kriteria pembaca atau buku serupa menggunakan _Content-Based Filtering_.
+2. Menyediakan rekomendasi buku yang belum dibaca atau mungkin disukai pembaca menggunakan _Collaborative Filtering_.
 
 #### Solution Statements
-1. **Content-Based Filtering:**
+1. **_Content-Based Filtering_:**
 - **Metode**: Sistem akan menggunakan teknik Term Frequency-Inverse Document Frequency (TF-IDF) dan cosine similarity untuk mengukur kemiripan antara deskripsi buku, genre, dan metadata lainnya.
 - **Output**: Sistem ini akan merekomendasikan top 5 buku yang memiliki kemiripan konten paling tinggi dengan buku yang diinput oleh pengguna.
 - **Detail Rekomendasi**: Buku-buku yang direkomendasikan akan memiliki skor kemiripan minimal 0.7 pada skala 0 hingga 1, yang menunjukkan bahwa buku-buku tersebut memiliki konten yang sangat relevan dengan preferensi pembaca.
 
-2. **Collaborative Filtering:**
+2. **_Collaborative Filtering_:**
 - **Metode**: Menggunakan model embedding seperti RecommenderNet yang diimplementasikan dengan Keras, sistem ini akan memprediksi buku yang akan disukai pengguna berdasarkan pola rating pengguna lain yang memiliki preferensi serupa.
 Output: Sistem akan merekomendasikan top 10 buku yang memiliki rating tinggi yang belum pernah dibaca oleh pengguna.
 - **Detail Rekomendasi**: Buku yang direkomendasikan memiliki rating rata-rata minimal 4.0 dari skala 5 berdasarkan ulasan pengguna di dataset. Buku-buku ini juga akan diprioritaskan jika telah menerima lebih dari 50 ulasan, untuk memastikan bahwa rekomendasi didasarkan pada data yang cukup signifikan dan representatif.
@@ -131,49 +131,49 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
 | original_publication_year    | 88.870.317                |
 
   
-**2. Encoding Data**:
+**2. _Encoding_ Data**:
 **Deskripsi**: Proses mengubah fitur kategorikal menjadi format numerik agar bisa digunakan oleh algoritma pembelajaran mesin.
 **Teknik yang Digunakan:**
-   1. One Hot Encoding:
+   1. _One Hot Encoding_:
       - Digunakan untuk mengubah fitur kategorikal seperti genre buku menjadi format biner.
       - Kegunaan: Menyediakan representasi yang tidak memiliki urutan atau hierarki, yang penting untuk fitur seperti genre buku.
    2. Label Encoding:
       - Digunakan untuk mengubah fitur kategorikal seperti penulis menjadi label numerik.
       - Kegunaan: Menyediakan cara sederhana dan cepat untuk mengkonversi fitur kategorikal menjadi numerik.
-   3. Drop Dummy:
-      - Digunakan untuk mengurangi redundansi setelah One Hot Encoding dengan menghapus satu kolom dummy.
+   3. _Drop Dummy_:
+      - Digunakan untuk mengurangi redundansi setelah _One Hot Encoding_ dengan menghapus satu kolom _dummy_.
       - Kegunaan: Mencegah masalah collinearity dalam model regresi atau klasifikasi.
         
-**Alasan**: Encoding fitur kategorikal menjadi numerik sangat penting agar dapat digunakan oleh algoritma pembelajaran mesin, yang hanya bisa bekerja dengan data numerik. One Hot Encoding dipilih untuk fitur tanpa urutan (seperti genre), sementara Label Encoding digunakan untuk fitur dengan jumlah kategori yang banyak (seperti penulis).
+**Alasan**: _Encoding_ fitur kategorikal menjadi numerik sangat penting agar dapat digunakan oleh algoritma pembelajaran mesin, yang hanya bisa bekerja dengan data numerik. _One Hot Encoding_ dipilih untuk fitur tanpa urutan (seperti genre), sementara Label Encoding digunakan untuk fitur dengan jumlah kategori yang banyak (seperti penulis).
 
 3. **Pembagian Data**
-- **Deskripsi**: Membagi dataset menjadi data pelatihan (training) dan pengujian (testing) untuk memvalidasi model.
+- **Deskripsi**: Membagi dataset menjadi data pelatihan (_training_) dan pengujian (_testing_) untuk memvalidasi model.
 Metode: Menggunakan train_test_split dengan rasio 80:20 untuk membagi data.
 - **Alasan**: Membagi data menjadi bagian training dan testing penting untuk mengevaluasi performa model dengan data yang belum pernah dilihat sebelumnya, sehingga memberikan indikasi yang lebih baik tentang bagaimana model akan bekerja pada data yang baru.
 
 ### Modelling:
 
-Dalam proyek ini, digunakan dua pendekatan utama untuk membangun sistem rekomendasi buku: Content-Based Filtering dan Collaborative Filtering. Kedua metode ini dipilih untuk memberikan rekomendasi yang lebih akurat dan personal kepada pengguna.
+Dalam proyek ini, digunakan dua pendekatan utama untuk membangun sistem rekomendasi buku: _Content-Based Filtering_ dan _Collaborative Filtering_. Kedua metode ini dipilih untuk memberikan rekomendasi yang lebih akurat dan personal kepada pengguna.
 
-**1. Content-Based Filtering**
+**1. _Content-Based Filtering_**
 **Deskripsi**:
-Content-Based Filtering adalah teknik rekomendasi yang mendasarkan rekomendasi pada kesamaan antara konten dari item yang berbeda. Metode ini menggunakan informasi fitur dari item (misalnya, buku) untuk menemukan item yang serupa dengan preferensi pengguna sebelumnya.
+_Content-Based Filtering_ adalah teknik rekomendasi yang mendasarkan rekomendasi pada kesamaan antara konten dari item yang berbeda. Metode ini menggunakan informasi fitur dari item (misalnya, buku) untuk menemukan item yang serupa dengan preferensi pengguna sebelumnya.
 
 **Algoritma yang Digunakan:**
-Pendekatan ini menggunakan algoritma TF-IDF (Term Frequency-Inverse Document Frequency) untuk mengubah teks (misalnya, deskripsi buku, genre) menjadi vektor numerik. Setelah itu, dihitung kesamaan antara buku menggunakan cosine similarity untuk menemukan buku yang paling mirip dengan buku yang sudah disukai atau dilihat oleh pengguna.
+Pendekatan ini menggunakan algoritma _TF-IDF (Term Frequency-Inverse Document Frequency)_ untuk mengubah teks (misalnya, deskripsi buku, genre) menjadi vektor numerik. Setelah itu, dihitung kesamaan antara buku menggunakan cosine similarity untuk menemukan buku yang paling mirip dengan buku yang sudah disukai atau dilihat oleh pengguna.
 
 **Cara Kerja:**
-1. TF-IDF Vectorization: Mengubah teks (misalnya, deskripsi buku) menjadi representasi numerik yang menangkap relevansi kata dalam konteks koleksi dokumen (buku).
-2. Cosine Similarity: Menghitung kesamaan antara vektor buku berdasarkan sudut antara vektor. Nilai cosine similarity berkisar antara 0 dan 1, di mana 1 menunjukkan kesamaan sempurna.
+1. _TF-IDF Vectorization_: Mengubah teks (misalnya, deskripsi buku) menjadi representasi numerik yang menangkap relevansi kata dalam konteks koleksi dokumen (buku).
+2. Cosine Similarity: Menghitung kesamaan antara vektor buku berdasarkan sudut antara vektor. Nilai _cosine similarity_ berkisar antara 0 dan 1, di mana 1 menunjukkan kesamaan sempurna.
 
 **Alasan Pemilihan:**
-- **Relevansi Kontekstual**: TF-IDF cocok untuk menangkap konteks dan relevansi kata dalam deskripsi buku, sehingga bisa memberikan rekomendasi buku yang relevan berdasarkan isi kontennya.
+- **Relevansi Kontekstual**: _TF-IDF_ cocok untuk menangkap konteks dan relevansi kata dalam deskripsi buku, sehingga bisa memberikan rekomendasi buku yang relevan berdasarkan isi kontennya.
 - **Efektif untuk Data Teks**: Pendekatan ini sangat baik dalam menangani data teks seperti deskripsi buku, genre, dan lainnya.
-- **Tidak Memerlukan Data Pengguna Lain:** Content-Based Filtering tidak memerlukan data dari pengguna lain, sehingga cocok untuk memberikan rekomendasi awal untuk pengguna baru.
+- **Tidak Memerlukan Data Pengguna Lain:** _Content-Based Filtering_ tidak memerlukan data dari pengguna lain, sehingga cocok untuk memberikan rekomendasi awal untuk pengguna baru.
 
 **Top 5 Rekomendasi Buku (Contoh):**
 
-Berikut adalah tabel hasil rekomendasi buku berdasarkan buku yang dicari ("The Door Into Summer") dengan menggunakan Content-Based Filtering
+Berikut adalah tabel hasil rekomendasi buku berdasarkan buku yang dicari ("_The Door Into Summer_") dengan menggunakan _Content-Based Filtering_
 
 ## Hasil Rekomendasi Buku Berdasarkan Buku yang Dicari ("The Door Into Summer")
 
@@ -186,9 +186,9 @@ Berikut adalah tabel hasil rekomendasi buku berdasarkan buku yang dicari ("The D
 | Shadow Divers                                             | Robert Kurson            |
 
 
-**2. Collaborative Filtering**
+**2. _Collaborative Filtering_**
 **Deskripsi**:
-Collaborative Filtering adalah teknik yang menggunakan informasi dari banyak pengguna untuk memberikan rekomendasi. Metode ini berfokus pada pola preferensi di antara pengguna untuk merekomendasikan item yang mungkin disukai pengguna lain dengan preferensi yang sama.
+_Collaborative Filtering_ adalah teknik yang menggunakan informasi dari banyak pengguna untuk memberikan rekomendasi. Metode ini berfokus pada pola preferensi di antara pengguna untuk merekomendasikan item yang mungkin disukai pengguna lain dengan preferensi yang sama.
 
 **Algoritma yang Digunakan:**
 Menggunakan algoritma embedding yang diterapkan dalam class RecommenderNet dari Keras. Algoritma ini mempelajari representasi numerik (embedding) dari pengguna dan buku sehingga bisa memprediksi kesukaan pengguna terhadap buku tertentu berdasarkan pola preferensi pengguna lainnya.
@@ -199,7 +199,7 @@ Menggunakan algoritma embedding yang diterapkan dalam class RecommenderNet dari 
 3. **Optimisasi**: Menggunakan optimisasi backpropagation untuk meminimalkan kesalahan prediksi rating buku.
 
 **Alasan Pemilihan:**
-- **Memanfaatkan Preferensi Pengguna Lain**: Collaborative Filtering efektif dalam memanfaatkan data dari banyak pengguna untuk menemukan pola preferensi, sehingga bisa memberikan rekomendasi yang lebih personal.
+- **Memanfaatkan Preferensi Pengguna Lain**: _Collaborative Filtering_ efektif dalam memanfaatkan data dari banyak pengguna untuk menemukan pola preferensi, sehingga bisa memberikan rekomendasi yang lebih personal.
 - **Menangani Skala Besar**: Pendekatan ini mampu menangani data dalam skala besar dan memberikan rekomendasi yang relevan dengan memanfaatkan kesamaan pola preferensi.
 - **Cocok untuk Rating:** Algoritma ini dirancang khusus untuk prediksi rating, sehingga cocok untuk memberikan rekomendasi buku dengan rating tinggi.
 
@@ -228,12 +228,12 @@ Metrik evaluasi yang digunakan dalam proyek ini adalah Root Mean Squared Error (
 > **Gambar 2: Plot History RMSE**
 
 **Interpretasi RMSE:**
-Dalam konteks proyek ini, nilai RMSE sebesar 0.2136 menunjukkan performa yang baik dari model Collaborative Filtering. RMSE yang rendah menandakan bahwa model mampu memberikan prediksi rating yang mendekati nilai sebenarnya. Dengan demikian, hasil evaluasi menunjukkan bahwa model memiliki kemampuan yang baik dalam memprediksi preferensi pengguna terhadap buku. Hal ini sesuai dengan tujuan proyek untuk menyediakan rekomendasi buku yang sesuai dengan preferensi pengguna.
+Dalam konteks proyek ini, nilai RMSE sebesar 0.2136 menunjukkan performa yang baik dari model _Collaborative Filtering_. RMSE yang rendah menandakan bahwa model mampu memberikan prediksi rating yang mendekati nilai sebenarnya. Dengan demikian, hasil evaluasi menunjukkan bahwa model memiliki kemampuan yang baik dalam memprediksi preferensi pengguna terhadap buku. Hal ini sesuai dengan tujuan proyek untuk menyediakan rekomendasi buku yang sesuai dengan preferensi pengguna.
 
 ### Kesimpulan
-1. Sistem rekomendasi buku menggunakan content-based filtering berhasil memberikan rekomendasi buku berdasarkan penulis.
-2. Sistem rekomendasi buku menggunakan collaborative filtering berhasil memberikan rekomendasi buku berdasarkan rating tertinggi.
-4. Evaluasi model collaborative filtering dengan RMSE mencapai 0.2136.
+1. Sistem rekomendasi buku menggunakan _Content-Based Filtering_ berhasil memberikan rekomendasi buku berdasarkan penulis.
+2. Sistem rekomendasi buku menggunakan _Collaborative Filtering_ berhasil memberikan rekomendasi buku berdasarkan rating tertinggi.
+4. Evaluasi model _Collaborative Filtering_ dengan RMSE mencapai 0.2136.
 
 
 
