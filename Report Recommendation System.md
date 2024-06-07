@@ -40,6 +40,24 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
    - Tag paling populer digunakan untuk buku dengan genre fiksi dan non-fiksi.
      
 2. **'books.csv'**
+- Metadata :
+   - id: ID unik untuk setiap baris data.
+   - book_id: ID unik untuk buku.
+   - best_book_id: ID buku terbaik (jika ada).
+   - work_id: ID karya terkait buku.
+   - books_count: Jumlah edisi buku tertentu.
+   - isbn: Nomor ISBN buku.
+   - isbn13: Nomor ISBN-13 buku.
+   - authors: Nama penulis buku.
+   - original_publication_year: Tahun terbitnya buku.
+   - original_title: Judul asli buku.
+   - title: Judul buku.
+   - language_code: Kode bahasa buku.
+   - average_rating: Rating rata-rata buku.
+   - ratings_count: Jumlah rating yang diberikan untuk buku.
+   - work_ratings_count: Jumlah rating yang diterima oleh karya.
+   - work_text_reviews_count: Jumlah ulasan teks yang diterima oleh karya.
+   - ratings_1, ratings_2, ratings_3, ratings_4, ratings_5: Jumlah rating dengan nilai tertentu.
 - Konten: File ini berisi informasi mendetail tentang 10.000 buku, termasuk ID buku, penulis, judul, dan tahun terbit.
 - Analisis:
    - Jumlah buku unik: 10.000
