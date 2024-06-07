@@ -67,8 +67,8 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
    - Jumlah buku unik: 10.000
    - Jumlah penulis unik: 4.664
    - Distribusi tahun terbit menunjukkan mayoritas buku berasal dari periode setelah tahun 2000.
-   - Mayoritas buku memiliki rating tinggi (diatas 4), sehingga distribusi condong ke kanan.
-     ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/e9050884-aea0-4ed5-a154-eef789722faf)
+   - Mayoritas buku memiliki rating tinggi, sehingga distribusi condong ke kanan.
+     ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/2f9abfe3-48fe-4d08-9823-47b54157f841)
    - Penulis yang memiliki buku paling banyak ialah _John Grisham_
      ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/f6b32720-acca-4248-aec1-7a66f9e3a1d9)
 
