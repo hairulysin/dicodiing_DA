@@ -229,7 +229,12 @@ Menggunakan algoritma embedding yang diterapkan dalam class RecommenderNet dari 
 Metrik evaluasi yang digunakan dalam proyek ini adalah Root Mean Squared Error (RMSE), yang memberikan gambaran tentang seberapa baik model dalam memprediksi rating buku oleh pengguna. Nilai RMSE digunakan untuk mengukur tingkat akurasi prediksi model, di mana nilai yang lebih rendah menunjukkan prediksi yang lebih dekat dengan nilai observasi.
 
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/20f50a42-6fac-4cab-8a85-f6aa7a2f75e1)
-> **Gambar 2: Plot History RMSE**
+   > **Gambar 2: Plot History RMSE**
+
+**Insight**:
+- Penurunan RMSE: Nilai RMSE menurun seiring bertambahnya iterasi, menunjukkan peningkatan akurasi model selama pelatihan.
+- Konvergensi Model: Setelah beberapa iterasi, nilai RMSE mendekati konstan, menandakan bahwa model mencapai konvergensi dan tidak banyak peningkatan lebih lanjut.
+- Stabilitas: Stabilitas nilai RMSE di akhir pelatihan menunjukkan bahwa model belajar dengan baik tanpa tanda-tanda overfitting.
 
 **Interpretasi RMSE:**
 Dalam konteks proyek ini, nilai RMSE sebesar 0.2136 menunjukkan performa yang baik dari model _Collaborative Filtering_. RMSE yang rendah menandakan bahwa model mampu memberikan prediksi rating yang mendekati nilai sebenarnya. Dengan demikian, hasil evaluasi menunjukkan bahwa model memiliki kemampuan yang baik dalam memprediksi preferensi pengguna terhadap buku. Hal ini sesuai dengan tujuan proyek untuk menyediakan rekomendasi buku yang sesuai dengan preferensi pengguna.
