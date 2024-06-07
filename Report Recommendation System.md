@@ -33,7 +33,11 @@ Solusi ini dirancang untuk memberikan rekomendasi buku yang relevan dan berkuali
 ### Data Understanding
 
 Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-10k"_](https://www.kaggle.com/datasets/zygmunt/goodbooks-10k?select=books.csv). Dataset ini berisi 5 file dengan ekstensi csv, yaitu:
-1. **'book_tags.csv'**
+1. **'genre.csv'**
+- Metadata :
+   - goodreads_book_id: ID buku Goodreads.
+   - tag_id: ID tag (genre).
+   - count: Jumlah buku yang terkait dengan tag tertentu.
 - Konten: File ini mencakup data tag (label) untuk buku-buku, yang memungkinkan klasifikasi berdasarkan genre atau tema tertentu.
 - Analisis:
    - Jumlah tag unik: 34.252
@@ -65,6 +69,10 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
    - Distribusi tahun terbit menunjukkan mayoritas buku berasal dari periode setelah tahun 2000.
 
 3. **'ratings.csv'**
+- Metadata :
+   - book_id: ID buku yang diberi rating.
+   - user_id: ID pengguna yang memberi rating.
+   - rating: Nilai rating yang diberikan oleh pengguna untuk buku tertentu.
 - Konten: File ini berisi 5.973.270 entri rating yang diberikan oleh pengguna untuk berbagai buku.
 - Analisis:
    - Jumlah pengguna unik: 53.424
@@ -73,13 +81,20 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
     ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/110e667b-14c4-45bc-8590-e6568bfdcfde)
    > Gambar 1: Distribusi rating buku dari pengguna, menunjukkan sebagian besar buku mendapatkan rating tinggi.
    
-4. **'tag.csv'**
+4. **'jenis_genre.csv'**
+- Metadata :
+   - book_id: ID buku yang diberi rating.
+   - user_id: ID pengguna yang memberi rating.
+   - rating: Nilai rating yang diberikan oleh pengguna untuk buku tertentu.
 - Konten: File ini berisi pemetaan antara ID tag dan nama tag yang digunakan untuk buku-buku.
 - Analisis:
    - Jumlah jenis genre atau tag buku: 34.252
    - Beberapa tag seperti 'fiction', 'fantasy', dan 'young-adult' adalah yang paling sering digunakan.
 
-5. **To_Read.csv**:
+5. **Users.csv**:
+- Metadata :
+   - user_id: ID unik untuk setiap pengguna.
+   - book_id: ID buku yang telah dilihat atau diinteraksi oleh pengguna.
 - Konten: File ini berisi daftar buku yang ditandai pengguna untuk dibaca.
 - Analisis:
    - Jumlah pengguna unik: 48.871
