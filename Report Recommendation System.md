@@ -67,6 +67,18 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
    - Jumlah buku unik: 10.000
    - Jumlah penulis unik: 4.664
    - Distribusi tahun terbit menunjukkan mayoritas buku berasal dari periode setelah tahun 2000.
+   - Mayoritas buku memiliki rating tinggi (diatas 4), sehingga distribusi condong ke kanan.
+   - Penulis yang memiliki buku paling banyak ialah _John Grisham_
+     | Author             | Count   |
+|--------------------|---------|
+| John Grisham       | 160,000 |
+| Kurt Vonnegut Jr.  | 154,250 |
+| Roald Dahl         | 119,206 |
+| Janet Evanovich    | 108,814 |
+| Michael Crichton   | 108,776 |
+
+     ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/b8251562-6ba2-4e35-9056-877e082003c5)
+
 
 3. **'ratings.csv'**
 - Metadata :
