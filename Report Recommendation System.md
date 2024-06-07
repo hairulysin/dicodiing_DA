@@ -174,12 +174,16 @@ Menggunakan algoritma embedding yang diterapkan dalam class RecommenderNet dari 
 | Love in the Time of Cholera                            | Gabriel García Márquez, Edith Grossman                         |
 
 
+
+
 ### Evaluasi
-Metrik evaluasi yang digunakan adalah Root Mean Squared Error (RMSE).
+Metrik evaluasi yang digunakan dalam proyek ini adalah Root Mean Squared Error (RMSE), yang memberikan gambaran tentang seberapa baik model dalam memprediksi rating buku oleh pengguna. Nilai RMSE digunakan untuk mengukur tingkat akurasi prediksi model, di mana nilai yang lebih rendah menunjukkan prediksi yang lebih dekat dengan nilai observasi.
+
+**Gambar 2: Plot History RMSE**
 ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/20f50a42-6fac-4cab-8a85-f6aa7a2f75e1)
 
-RMSE: Mengukur tingkat akurasi prediksi model dengan rumus berikut:
-  Nilai RMSE rendah menunjukkan prediksi yang mendekati nilai observasi. Visualisasi RMSE selama pelatihan model collaborative filtering menunjukkan nilai error yang menurun hingga 0.2136, yang menunjukkan performa model yang baik.
+**Interpretasi RMSE:**
+Dalam konteks proyek ini, nilai RMSE sebesar 0.2136 menunjukkan performa yang baik dari model Collaborative Filtering. RMSE yang rendah menandakan bahwa model mampu memberikan prediksi rating yang mendekati nilai sebenarnya. Dengan demikian, hasil evaluasi menunjukkan bahwa model memiliki kemampuan yang baik dalam memprediksi preferensi pengguna terhadap buku. Hal ini sesuai dengan tujuan proyek untuk menyediakan rekomendasi buku yang sesuai dengan preferensi pengguna.
 
 ### Kesimpulan
 1. Sistem rekomendasi buku menggunakan content-based filtering berhasil memberikan rekomendasi buku berdasarkan penulis.
