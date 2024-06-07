@@ -67,7 +67,7 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
    - Jumlah buku unik: 10.000
    - Jumlah penulis unik: 4.664
    - Distribusi tahun terbit menunjukkan mayoritas buku berasal dari periode setelah tahun 2000.
-   - Penulis yang memiliki buku paling banyak ialah _John Grisham_
+   - Penulis yang memiliki buku paling banyak ialah _John Grisham_, hal ini memberikan insight tentang produktivitas penulis.
      ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/f6b32720-acca-4248-aec1-7a66f9e3a1d9)
     - Mayoritas buku memiliki rating tinggi, sehingga distribusi condong ke kanan.
      ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/2f9abfe3-48fe-4d08-9823-47b54157f841)
@@ -88,6 +88,9 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
    
     ![image](https://github.com/hairulysin/streamlitDashboard/assets/90087096/110e667b-14c4-45bc-8590-e6568bfdcfde)
    > Gambar 1: Distribusi rating buku dari pengguna, menunjukkan sebagian besar buku mendapatkan rating tinggi.
+  ** Insight:**
+   - Distribusi rating yang cenderung tinggi menunjukkan banyak pengguna memberikan rating positif.
+   - Pola rating ini dapat membantu dalam menyusun rekomendasi yang lebih akurat berdasarkan preferensi pengguna.
    
 4. **'jenis_genre.csv'**
 - Metadata :
@@ -117,6 +120,7 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
 - **Metode**: Digunakan metode isnull().sum() untuk menghitung jumlah nilai kosong dan dropna() untuk menghapusnya.
 - **Alasan**: Menghapus data kosong penting untuk menghindari bias atau error pada model. Data yang lengkap dan konsisten membantu dalam meningkatkan akurasi prediksi.
 
+**Tabel Missing Value:**
 | **Fitur**                    | **Jumlah Missing Values** |
 |------------------------------|---------------------------|
 | book_id                      | 0                         |
@@ -126,7 +130,9 @@ Dataset yang digunakan diambil dari situs **Kaggle** yang berjudul [_"goodbooks-
 | title                        | 88.860.317                |
 | original_publication_year    | 88.870.317                |
 
-  
+**Insight** : Kolom book_id, user_id, dan rating tidak memiliki missing values, yang menunjukkan bahwa data utama terkait identifikasi buku, pengguna, dan rating diberikan secara lengkap. Ini penting karena data ini menjadi dasar dalam membangun sistem rekomendasi.
+
+
 **2. _Encoding_ Data**:
 **Deskripsi**: Proses mengubah fitur kategorikal menjadi format numerik agar bisa digunakan oleh algoritma pembelajaran mesin.
 **Teknik yang Digunakan:**
@@ -180,6 +186,8 @@ Berikut adalah tabel hasil rekomendasi buku berdasarkan buku yang dicari ("_The 
 | Job: A Comedy of Justice                                  | Robert A. Heinlein       |
 | Mrs. Frisby and the Rats of NIMH (Rats of NIMH #1)        | Robert C. O'Brien        |
 | Shadow Divers                                             | Robert Kurson            |
+
+**Insight**: Tiga dari lima buku yang direkomendasikan ditulis oleh Robert A. Heinlein, yang juga penulis dari buku yang dicari, "The Door Into Summer". Ini menunjukkan bahwa sistem rekomendasi cenderung merekomendasikan buku-buku lain dari penulis yang sama, dengan begini pembaca yang menyukai satu karya dari seorang penulis kemungkinan besar akan menikmati karya-karya lainnya dari penulis tersebut. Robert A. Heinlein dikenal dengan genre fiksi ilmiah (science fiction). Buku-buku seperti "Time Enough for Love", "Stranger in a Strange Land", dan "Job: A Comedy of Justice" semua berada dalam genre yang sama.
 
 
 **2. _Collaborative Filtering_**
