@@ -233,7 +233,7 @@ Metrik evaluasi yang digunakan dalam proyek ini adalah _Root Mean Squared Error 
 - Stabilitas: Stabilitas nilai RMSE di akhir pelatihan menunjukkan bahwa model belajar dengan baik tanpa tanda-tanda _overfitting_.
 
 **Interpretasi RMSE:**
-Dalam konteks proyek ini, nilai RMSE sebesar 0.2136 menunjukkan performa yang baik dari model _Collaborative Filtering_. RMSE yang rendah menandakan bahwa model mampu memberikan prediksi rating yang mendekati nilai sebenarnya. Dengan demikian, hasil evaluasi menunjukkan bahwa model memiliki kemampuan yang baik dalam memprediksi preferensi pengguna terhadap buku. Hal ini sesuai dengan tujuan proyek untuk menyediakan rekomendasi buku yang sesuai dengan preferensi pengguna.
+Dalam konteks proyek ini, nilai RMSE sebesar 0.2133 menunjukkan performa yang baik dari model _Collaborative Filtering_. RMSE yang rendah menandakan bahwa model mampu memberikan prediksi rating yang mendekati nilai sebenarnya. Dengan demikian, hasil evaluasi menunjukkan bahwa model memiliki kemampuan yang baik dalam memprediksi preferensi pengguna terhadap buku. Hal ini sesuai dengan tujuan proyek untuk menyediakan rekomendasi buku yang sesuai dengan preferensi pengguna.
 
 Untuk content-based filtering, metrik evaluasi yang digunakan adalah _Precision_. _Precision_ mengukur proporsi rekomendasi yang relevan dari keseluruhan rekomendasi yang diberikan oleh sistem.
 
@@ -249,7 +249,7 @@ Untuk content-based filtering, metrik evaluasi yang digunakan adalah _Precision_
 ### Kesimpulan
 1. Sistem rekomendasi buku menggunakan _Content-Based Filtering_ berhasil memberikan rekomendasi buku berdasarkan penulis.
 2. Sistem rekomendasi buku menggunakan _Collaborative Filtering_ berhasil memberikan rekomendasi buku berdasarkan rating tertinggi.
-4. Evaluasi model _Collaborative Filtering_ dengan RMSE mencapai 0.2136.
+4. Evaluasi model _Collaborative Filtering_ dengan RMSE mencapai 0.2133.
 
 
 
